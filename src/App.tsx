@@ -8,6 +8,7 @@ import { Certifications } from "@/components/sections/Certifications";
 import { Resume } from "@/components/sections/Resume";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
+import { CustomCursor } from "@/components/CustomCursor";
 
 function Divider() {
   return (
@@ -20,6 +21,7 @@ function Divider() {
 export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />
