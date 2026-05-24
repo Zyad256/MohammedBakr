@@ -240,8 +240,20 @@
   }
 }
 
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary);
+  }
+}
+
 @layer utilities {
   .animate-typewriter {
-    animation: typewriter 3s steps(40, end) forwards;
+    animation:
+      typewriter 2.5s steps(40, end) forwards,
+      blink-caret 0.75s step-end infinite;
   }
 }
