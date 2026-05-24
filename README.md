@@ -57,7 +57,3 @@ Architected an impenetrable topology using multi-area OSPF routing, site-to-site
   <img src="https://img.shields.io/badge/LinkedIn-Blue_Team-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 </div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=MohammedAbo-Bakr&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" width="400" />
-</div>
