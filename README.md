@@ -14,7 +14,7 @@
 Welcome to the source code for my interactive portfolio. I am a passionate cybersecurity professional specializing in **Threat Detection, Incident Response, and Digital Forensics**. This repository houses my single-page application built with React, Vite, and tailwind.
 
 <div align="center">
-  <a href="https://mohammedabo-bakr.github.io/MohammedBakr/">
+  <a href="https://mohammed-bakr.netlify.app/">
     <img src="https://img.shields.io/badge/View_Live_Portfolio-000?style=for-the-badge&logo=react&logoColor=3B82F6" alt="Live Site">
   </a>
 </div>
