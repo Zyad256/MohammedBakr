@@ -67,6 +67,14 @@
   --grid: oklch(0.65 0.2 250 / 6%);
 }
 
+.red-team {
+  --primary: oklch(0.6 0.25 25);
+  --secondary: oklch(0.5 0.2 40);
+  --ring: oklch(0.6 0.25 25);
+  --terminal-prompt: oklch(0.6 0.25 25);
+  --grid: oklch(0.6 0.25 25 / 10%);
+}
+
 @font-face {
   font-family: "Inter";
   src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")

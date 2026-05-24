@@ -9,6 +9,7 @@ import { Resume } from "@/components/sections/Resume";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
+import { RedTeamOverride } from "@/components/RedTeamOverride";
 
 function Divider() {
   return (
@@ -21,6 +22,7 @@ function Divider() {
 export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <RedTeamOverride />
       <CustomCursor />
       <Navbar />
       <main>
