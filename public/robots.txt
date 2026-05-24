@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohammed-bakr.netlify.app/sitemap.xml
