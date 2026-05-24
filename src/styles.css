@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-terminal: var(--terminal);
+  --color-terminal-foreground: var(--terminal-foreground);
+  --color-terminal-prompt: var(--terminal-prompt);
+  --color-grid: var(--grid);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 0.625rem;
+  /* Deep Blue / SOC Dashboard Theme */
+  --background: oklch(0.13 0.02 260); /* Deeper midnight blue */
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.17 0.03 260);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.17 0.03 260);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.65 0.2 250); /* Electric Blue Target */
+  --primary-foreground: oklch(0.13 0.02 260);
+  --secondary: oklch(0.7 0.15 280); /* Deep Purple/Cyan Accent */
+  --secondary-foreground: oklch(0.98 0.01 240);
+  --muted: oklch(0.22 0.04 260);
+  --muted-foreground: oklch(0.7 0.03 250);
+  --accent: oklch(0.65 0.2 250);
+  --accent-foreground: oklch(0.13 0.02 260);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 240);
+  --border: oklch(0.25 0.05 260 / 60%);
+  --input: oklch(0.2 0.04 260);
+  --ring: oklch(0.65 0.2 250);
+
+  --terminal: oklch(0.1 0.02 260);
+  --terminal-foreground: oklch(
+    0.9 0.05 200
+  ); /* Soft blue/cyan for terminal text */
+  --terminal-prompt: oklch(0.55 0.2 250);
+  --grid: oklch(0.65 0.2 250 / 6%);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* Hexagonal or deep grid feel for Blue Team */
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-glow {
+    text-shadow: 0 0 24px color-mix(in oklab, var(--primary) 70%, transparent);
+  }
+  .bg-grid-fade {
+    background:
+      radial-gradient(
+        ellipse at top right,
+        color-mix(in oklab, var(--primary) 15%, transparent),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at bottom left,
+        color-mix(in oklab, var(--secondary) 15%, transparent),
+        transparent 50%
+      );
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .card-glow {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent),
+      0 15px 40px -15px color-mix(in oklab, var(--primary) 30%, transparent);
+  }
+  .scanline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      color-mix(in oklab, var(--primary) 5%, transparent) 2px 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Blue Team specific radar animation */
+  .radar-sweep::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 70%,
+      color-mix(in oklab, var(--primary) 30%, transparent) 100%
+    );
+    animation: radar-spin 8s linear infinite;
+    opacity: 0.4;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2.5s infinite alternate;
+  }
+
+  .shimmer-line {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--primary) 80%, transparent),
+      transparent
+    );
+    animation: shimmer 4s infinite linear;
+  }
+}
+
+@keyframes radar-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    text-shadow: 0 0 10px color-mix(in oklab, var(--primary) 30%, transparent);
+    box-shadow: 0 0 5px color-mix(in oklab, var(--primary) 20%, transparent);
+  }
+  100% {
+    text-shadow:
+      0 0 20px color-mix(in oklab, var(--primary) 80%, transparent),
+      0 0 8px var(--primary);
+    box-shadow: 0 0 15px color-mix(in oklab, var(--primary) 60%, transparent);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    left: 200%;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(110vh) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+    scale: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) scale(0.2);
+    opacity: 0;
+  }
+}
