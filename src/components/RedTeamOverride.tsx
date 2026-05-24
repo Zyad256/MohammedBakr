@@ -5,6 +5,12 @@ export function RedTeamOverride() {
   const [breach, setBreach] = useState(false);
 
   useEffect(() => {
+    const playAlarm = () => {
+      const audio = new Audio(`${import.meta.env.BASE_URL}alarm.mp3`);
+      audio.volume = 0.5;
+      audio.play().catch(e => console.error("Error playing alarm", e));
+    };
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.shiftKey && e.code === "KeyR") {
         e.preventDefault();
@@ -12,6 +18,7 @@ export function RedTeamOverride() {
         const isRed = document.documentElement.classList.toggle("red-team");
         if (isRed) {
           setBreach(true);
+          playAlarm();
           setTimeout(() => setBreach(false), 2500);
         }
       }
