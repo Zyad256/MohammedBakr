@@ -2,11 +2,31 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const steps = [
-  { n: "01", t: "Identify the OSI layer", d: "Narrow the failure domain — physical, data-link, network, transport, or application." },
-  { n: "02", t: "Test connectivity", d: "ping, traceroute, mtr — measure reachability and where packets actually die." },
-  { n: "03", t: "Check IP configuration", d: "Verify IP, mask, gateway, DNS, DHCP lease — most bugs live here." },
-  { n: "04", t: "Verify routing tables", d: "show ip route, OSPF neighbors, next-hop sanity, recursive lookups." },
-  { n: "05", t: "Analyze ACL & security", d: "Inspect firewall rules, ACLs, security groups — silently dropped traffic clues." },
+  {
+    n: "01",
+    t: "Preparation & Triage",
+    d: "Continuously tune SIEM rules, aggregate threat intelligence feeds, and identify false positives vs. verified alerts.",
+  },
+  {
+    n: "02",
+    t: "Detection & Analysis",
+    d: "Investigate anomalies using Sysmon, packet captures (Wireshark), and EDR telemetry. Map behaviors to MITRE ATT&CK.",
+  },
+  {
+    n: "03",
+    t: "Containment",
+    d: "Isolate compromised endpoints, firewall off rogue IP blocklists, and halt lateral movement.",
+  },
+  {
+    n: "04",
+    t: "Eradication",
+    d: "Remove malicious payloads, kill persistence mechanisms, and patch the root vulnerability.",
+  },
+  {
+    n: "05",
+    t: "Recovery & Post-Incident",
+    d: "Restore systems from secure backups, monitor for re-infection, and update playbooks for future prevention.",
+  },
 ];
 
 export function Process() {
@@ -15,8 +35,8 @@ export function Process() {
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           index="04 / process"
-          title="How I troubleshoot"
-          subtitle="A repeatable, OSI-anchored playbook I run on every connectivity issue."
+          title="Incident Response"
+          subtitle="A repeatable, battle-tested playbook for isolating and neutralizing threats."
         />
         <ol className="relative border-l border-primary/30 ml-3 space-y-8">
           {steps.map((s, i) => (
@@ -32,8 +52,10 @@ export function Process() {
                 {s.n}
               </span>
               <div className="rounded-lg border border-transparent group-hover:border-primary/20 group-hover:bg-primary/5 p-3 -mx-3 -mt-3 transition-colors">
-                <h3 className="font-semibold">{s.t}</h3>
-                <p className="text-sm text-muted-foreground mt-1 group-hover:text-foreground/80 transition-colors">{s.d}</p>
+                <h3 className="font-semibold text-lg">{s.t}</h3>
+                <p className="text-sm text-muted-foreground mt-1 group-hover:text-foreground/80 transition-colors">
+                  {s.d}
+                </p>
               </div>
             </motion.li>
           ))}
