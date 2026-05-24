@@ -5,6 +5,24 @@ import { image } from "framer-motion/client";
 export function Certifications() {
   const certs = [
     {
+      id: "cert-archon-soc",
+      title: "Cybersecurity SOC Analyst",
+      status: "Completed",
+      issuer: "Archon Security",
+      date: "2026",
+      image: "/Certificates/cybersecurity soc analyst archon security.png",
+      progress: 100,
+    },
+    {
+      id: "cert-archon-ai",
+      title: "AI Threat Detection",
+      status: "Completed",
+      issuer: "Archon Security",
+      date: "2026",
+      image: "/Certificates/ai threat detection archon security.png",
+      progress: 100,
+    },
+    {
       id: "cert-cyberops",
       title: "Cisco CyberOps Associate",
       status: "Completed",
@@ -15,7 +33,7 @@ export function Certifications() {
     },
     {
       id: "cert-ccna",
-      title: "Cisco Certified Network Associate",
+      title: "CCNA: Enterprise Networking, Security, and Automation",
       status: "Completed",
       issuer: "Credly",
       date: "2025",
@@ -23,12 +41,21 @@ export function Certifications() {
       progress: 100,
     },
     {
-      id: "cert-archon-ai",
-      title: "AI Threat Detection",
+      id: "cert-ccna-srwe",
+      title: "CCNA: Switching, Routing, and Wireless Essentials",
       status: "Completed",
-      issuer: "Archon Security",
-      date: "2026",
-      image: "/Certificates/ai threat detection archon security.png",
+      issuer: "Credly",
+      date: "2025",
+      image: "https://images.credly.com/images/f4ccdba9-dd65-4349-baad-8f05df116443/CCNASRWE__1_.png",
+      progress: 100,
+    },
+    {
+      id: "cert-ccna-itn",
+      title: "CCNA: Introduction to Networks",
+      status: "Completed",
+      issuer: "Credly",
+      date: "2025",
+      image: "https://images.credly.com/images/70d71df5-f3dc-4380-9b9d-f22513a70417/CCNAITN__1_.png",
       progress: 100,
     },
     {
@@ -42,7 +69,7 @@ export function Certifications() {
     },
     {
       id: "cert-depi-cisco",
-      title: "Infrastructure and Security - Cisco Cyber Security Engineer",
+      title: "Infrastructure and Security - Cisco Cyber Security",
       status: "Completed",
       issuer: "DEPI / Cisco",
       date: "2025",
@@ -56,15 +83,6 @@ export function Certifications() {
       issuer: "BARQ Systems",
       date: "2025",
       image: "/Certificates/networking and cybersecurity fundementals barq.png",
-      progress: 100,
-    },
-    {
-      id: "cert-archon-soc",
-      title: "Cybersecurity SOC Analyst",
-      status: "Completed",
-      issuer: "Archon Security",
-      date: "2024",
-      image: "/Certificates/cybersecurity soc analyst archon security.png",
       progress: 100,
     },
     {
