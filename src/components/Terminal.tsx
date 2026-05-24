@@ -28,7 +28,7 @@ export function Prompt({ children }: { children: ReactNode }) {
       <span className="text-muted-foreground">:</span>
       <span className="text-secondary">~</span>
       <span className="text-muted-foreground">$ </span>
-      <span className="text-[var(--terminal-foreground)]">{children}</span>
+      <span className="text-[var(--terminal-foreground)]">{children}<span className="inline-block w-2.5 h-4 ml-1 -mb-0.5 bg-primary/80 animate-pulse" /></span>
       {"\n"}
     </span>
   );

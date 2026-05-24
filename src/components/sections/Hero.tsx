@@ -20,9 +20,9 @@ export function Hero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
             Mohammed <span className="gradient-text">Abo-Bakr</span>
           </h1>
-          <p className="mt-3 font-mono text-sm sm:text-base text-primary">
+          <div className="mt-3 font-mono text-sm sm:text-base text-primary overflow-hidden whitespace-nowrap border-r-2 border-primary animate-typewriter w-fit pr-2">
             &gt; Blue Team Defender / SOC Analyst
-          </p>
+          </div>
           <p className="mt-6 text-muted-foreground text-lg max-w-xl">
             Passionate threat detection, incident response, and network defense specialist — eager to thrive and grow in Security Operations Center (SOC) environments.
           </p>

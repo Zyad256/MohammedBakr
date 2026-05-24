@@ -14,16 +14,21 @@ export function Contact() {
         />
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-3">
-            <a
-              href="mailto:mo.bakr231@gmail.com"
-              className="flex items-center gap-4 p-4 rounded-lg border border-border bg-card/60 hover:border-primary/50 transition"
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText("mo.bakr231@gmail.com");
+                setSent(true);
+                setTimeout(() => setSent(false), 2000);
+              }}
+              className="flex items-center gap-4 p-4 rounded-lg border border-border bg-card/60 hover:border-primary/50 transition w-full text-left relative overflow-hidden group"
             >
-              <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center font-mono">@</div>
+              <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center font-mono group-hover:scale-110 transition-transform">@</div>
               <div>
                 <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-wider">Email</div>
                 <div className="text-sm break-all sm:break-normal">mo.bakr231@gmail.com</div>
               </div>
-            </a>
+              {sent && <div className="absolute right-4 text-xs font-mono text-green-400 font-bold bg-green-500/10 px-2 py-1 rounded">Copied!</div>}
+            </button>
             <a
               href="https://linkedin.com/in/mohammed-abo-bakr-3145122a5"
               target="_blank" rel="noreferrer"
