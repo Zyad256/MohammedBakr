@@ -116,11 +116,13 @@ export function Certifications() {
             >
               <div className="p-6 flex-1 flex flex-col items-center text-center">
                 {cert.image ? (
-                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-background mb-6 border border-border/50">
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-background mb-6 border border-border/50 group-hover:border-primary/50 transition-colors relative">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={cert.image.startsWith('http') ? cert.image : `${import.meta.env.BASE_URL}${cert.image.replace(/^\//, '')}`}
                       alt={cert.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 ) : (

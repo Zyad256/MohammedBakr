@@ -49,10 +49,10 @@ export function Navbar() {
             <li key={l.id}>
               <a
                 href={`#${l.id}`}
-                className={`px-3 py-2 rounded-md transition-colors ${
+                className={`px-3 py-2 rounded-md transition-all ${
                   active === l.id
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary bg-primary/10 shadow-[0_0_8px_var(--color-primary)] ring-1 ring-primary/30"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 {l.label}

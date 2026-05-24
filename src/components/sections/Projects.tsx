@@ -45,7 +45,7 @@ function ProjectCard({
         </div>
         <div className="flex flex-wrap gap-2">
           {tags.map((t) => (
-            <span key={t} className="font-mono text-[10px] px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20">
+            <span key={t} className="font-mono text-[10px] px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:scale-105 hover:shadow-[0_0_8px_var(--color-primary)] transition-all cursor-default">
               {t}
             </span>
           ))}
