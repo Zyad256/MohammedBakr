@@ -86,12 +86,25 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    /* Hexagonal or deep grid feel for Blue Team */
     background-image:
       linear-gradient(var(--grid) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid) 1px, transparent 1px);
     background-size: 30px 30px;
     background-attachment: fixed;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
   }
 }
 
@@ -250,10 +263,30 @@
   }
 }
 
+@keyframes biometric-scan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
 @layer utilities {
   .animate-typewriter {
     animation:
       typewriter 2.5s steps(40, end) forwards,
       blink-caret 0.75s step-end infinite;
+  }
+  .animate-biometric-scan {
+    animation: biometric-scan 2s ease-in-out infinite;
   }
 }

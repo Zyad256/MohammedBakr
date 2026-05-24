@@ -28,6 +28,8 @@ export function About() {
                 alt="Mohammed Abo-Bakr" 
                 className="w-full h-full object-cover rounded-xl relative z-10 grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" 
               />
+              {/* Biometric Scanline effect */}
+              <div className="absolute inset-x-0 h-1 bg-primary/80 z-20 top-0 shadow-[0_0_8px_var(--color-primary)] opacity-0 group-hover:animate-biometric-scan pointer-events-none" />
             </div>
           </motion.div>
 
