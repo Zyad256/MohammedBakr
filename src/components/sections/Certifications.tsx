@@ -5,6 +5,24 @@ import { image } from "framer-motion/client";
 export function Certifications() {
   const certs = [
     {
+      id: "cert-cyberops",
+      title: "Cisco CyberOps Associate",
+      status: "Completed",
+      issuer: "Credly",
+      date: "2025",
+      image: "https://images.credly.com/images/53f37f83-04a1-4935-9b1e-21a99cc6e1b2/CyberOpsAssoc.png",
+      progress: 100,
+    },
+    {
+      id: "cert-ccna",
+      title: "Cisco Certified Network Associate",
+      status: "Completed",
+      issuer: "Credly",
+      date: "2025",
+      image: "https://images.credly.com/images/0a6d331e-8abf-4272-a949-33f754569a76/CCNAENSA__1_.png",
+      progress: 100,
+    },
+    {
       id: "cert-archon-ai",
       title: "AI Threat Detection",
       status: "Completed",

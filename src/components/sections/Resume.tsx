@@ -42,10 +42,11 @@ export function Resume() {
             <p className="text-xs text-muted-foreground mt-1 mb-4">PDF · 2 pages · ATS-friendly</p>
             <a
               href="/CV(MohammedAboBakr).pdf"
-              download
+              target="_blank"
+              rel="noreferrer"
               className="px-4 py-2 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition w-full"
             >
-              Download CV
+              View CV
             </a>
           </div>
         </div>
