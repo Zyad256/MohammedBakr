@@ -100,7 +100,7 @@ export function Certifications() {
                 {cert.image ? (
                   <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-background mb-6 border border-border/50">
                     <img
-                      src={`${import.meta.env.BASE_URL}${cert.image.replace(/^\//, '')}`}
+                      src={cert.image.startsWith('http') ? cert.image : `${import.meta.env.BASE_URL}${cert.image.replace(/^\//, '')}`}
                       alt={cert.title}
                       className="w-full h-full object-cover"
                     />

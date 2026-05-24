@@ -24,7 +24,7 @@ export function About() {
             <div className="aspect-square sm:aspect-[4/3] lg:aspect-square w-full sm:w-2/3 lg:w-full mx-auto rounded-2xl overflow-hidden border border-border bg-card/60 card-glow p-1 relative group">
               <div className="absolute inset-0 bg-primary/10 rounded-2xl" />
               <img 
-                src={`${import.meta.env.BASE_URL}mohamedbark.png`} 
+                src={`${import.meta.env.BASE_URL}mohamedpakr.png`} 
                 alt="Mohammed Abo-Bakr" 
                 className="w-full h-full object-cover rounded-xl relative z-10 grayscale-[30%] group-hover:grayscale-0 transition-all duration-500" 
               />
