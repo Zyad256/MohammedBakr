@@ -37,6 +37,108 @@
     <meta name="twitter:image" content="/mohamedbakr.png" />
   </head>
   <body>
+    <style>
+      #preloader {
+        position: fixed;
+        inset: 0;
+        background: #020817;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #3b82f6;
+        font-family: "Courier New", Courier, monospace;
+        transition: opacity 0.6s ease-out;
+      }
+      .cyber-glitch-text {
+        font-size: 1.25rem;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        animation: cyber-glitch 2s linear infinite;
+      }
+      @keyframes cyber-glitch {
+        2%,
+        64% {
+          transform: translate(2px, 0) skew(0deg);
+        }
+        4%,
+        60% {
+          transform: translate(-2px, 0) skew(0deg);
+        }
+        62% {
+          transform: translate(0, 0) skew(5deg);
+        }
+      }
+      .cyber-loading-bar {
+        width: 250px;
+        height: 3px;
+        background: rgba(59, 130, 246, 0.2);
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+      .cyber-loading-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: #3b82f6;
+        animation: cyber-loading 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        box-shadow: 0 0 10px #3b82f6;
+      }
+      @keyframes cyber-loading {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 40%;
+        }
+        80% {
+          width: 90%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+      .system-logs {
+        font-size: 0.75rem;
+        color: rgba(59, 130, 246, 0.6);
+        margin-top: 15px;
+        height: 15px;
+      }
+    </style>
+    <div id="preloader">
+      <div class="cyber-glitch-text">INITIALIZING SOC ENCLAVE...</div>
+      <div class="cyber-loading-bar"></div>
+      <div id="sys-logs" class="system-logs">Mounting secure modules...</div>
+    </div>
+    <script>
+      const logs = [
+        "Decrypting mainframe...",
+        "Establishing secure connection...",
+        "Loading threat intelligence engines...",
+        "Interface ready.",
+      ];
+      let logIndex = 0;
+      const logEl = document.getElementById("sys-logs");
+      const logInterval = setInterval(() => {
+        if (logIndex < logs.length) {
+          logEl.innerText = logs[logIndex++];
+        }
+      }, 250);
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          clearInterval(logInterval);
+          const preloader = document.getElementById("preloader");
+          preloader.style.opacity = "0";
+          setTimeout(() => preloader.remove(), 600);
+        }, 1300);
+      });
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
