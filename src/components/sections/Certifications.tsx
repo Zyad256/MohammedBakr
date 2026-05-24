@@ -5,6 +5,15 @@ import { image } from "framer-motion/client";
 export function Certifications() {
   const certs = [
     {
+      id: "cert-archon-ai",
+      title: "AI Threat Detection",
+      status: "Completed",
+      issuer: "Archon Security",
+      date: "2026",
+      image: "/Certificates/ai threat detection archon security.png",
+      progress: 100,
+    },
+    {
       id: "cert-we-blue-team",
       title: "Cyber Security Diploma Blue Team",
       status: "Completed",
@@ -23,15 +32,6 @@ export function Certifications() {
       progress: 100,
     },
     {
-      id: "cert-archon-soc",
-      title: "Cybersecurity SOC Analyst",
-      status: "Completed",
-      issuer: "Archon Security",
-      date: "2024",
-      image: "/Certificates/cybersecurity soc analyst archon security.png",
-      progress: 100,
-    },
-    {
       id: "cert-barq",
       title: "Networking and Cybersecurity Fundamentals",
       status: "Completed",
@@ -41,12 +41,12 @@ export function Certifications() {
       progress: 100,
     },
     {
-      id: "cert-archon-ai",
-      title: "AI Threat Detection",
+      id: "cert-archon-soc",
+      title: "Cybersecurity SOC Analyst",
       status: "Completed",
       issuer: "Archon Security",
-      date: "2026",
-      image: "/Certificates/ai threat detection archon security.png",
+      date: "2024",
+      image: "/Certificates/cybersecurity soc analyst archon security.png",
       progress: 100,
     },
     {
